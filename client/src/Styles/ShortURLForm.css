@@ -1,0 +1,55 @@
+.shortUrlContainer{
+    position: relative;
+    padding-top: 30px;
+    width: 95%;
+    height: 85vh;
+    margin-bottom: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#originalURLValue{
+    width: 50%;
+    padding-left: 20px;
+    height: 40px;
+    font-family: inherit;
+    font-size: 14px;
+    border-radius: 2px;
+    line-height: 36px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 2px 4px -1px rgb(32, 32, 32);
+    transition: 0.5s ease-in-out;
+}
+#refValue {
+    width: 20%;
+    padding-left: 20px;
+    height: 40px;
+    font-family: inherit;
+    font-size: 14px;
+    border-radius: 2px;
+    line-height: 36px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 2px 4px -1px rgb(32, 32, 32);
+    transition: 0.5s ease-in-out;
+}
+
+
+#submit{
+    outline: none;
+    width: 125px;
+    color: #039be5;
+    background-color: white;
+    font-family: quicksand;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px -2px rgb(32, 32, 32);
+    transition: 0.5s ease-in-out;
+    margin-right: 10px;
+}
+
+form{
+    width: 100%;
+    display: inline-flex;
+}
