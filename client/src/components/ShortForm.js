@@ -17,7 +17,6 @@ const ShortForm= (props) => {
       <form method="post" action="/api/create">
         <input type="url" id="originalURLValue" value={originalURLValue} name="originalLink" ref={urlRef} placeholder="Paste Your Original URL" onChange={e=>handleChange(e)} required/>
         <input type="text" id="refValue" value={refValue} name="identity" ref={refRef} placeholder="Give Your URL A Name *Optional" onChange={e=>referenceChange(e)}/>
-        <br/>
         <button type="submit" id="submit">
           Create URL
         </button>

@@ -7,6 +7,7 @@ import "../Styles/Shortlinks.css";
 class Shortlinks extends Component {
   render() {
     const {Links} = this.props;
+    console.log("Links", Links.length)
     const showLinks = () => {
       return Links.map(url=>{
         return(
@@ -14,11 +15,12 @@ class Shortlinks extends Component {
             <ShortLink url={url}/>
           </React.Fragment>
         );
-      });    };
-    return (
-      <div>
-        <p>Shortlinks</p>
-        {Links.length>0?<table>
+      });    
+    };
+    const checkLinks=()=>{
+      if(Links.length>0){
+        return(
+          <table>
           <thead>
             <tr>
               <th>Original Link</th>
@@ -32,7 +34,17 @@ class Shortlinks extends Component {
           <tbody>
             {showLinks()}
           </tbody>
-        </table>:<p>Links Are Coming...</p>}
+        </table>
+        )
+      }else{
+        return(
+          <h3>There Is No Shortlinks! Create One.</h3>
+        )
+      }
+    }
+    return (
+      <div className="ShortlinksContainer">
+        {checkLinks()}
       </div>
     )
   }
