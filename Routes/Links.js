@@ -25,6 +25,6 @@ module.exports=app=>{
     app.get("/:shortid", async (req, res)=>{
         const shortid = await req.params.shortid;
         const shorturlobject = await Links.findOne({shortid});
-        res.status(301).redirect(shorturlobject.originalPassedLink);
+        res.status(301).redirect(shorturlobject.originalLink);
     });
 };
