@@ -8,9 +8,10 @@
     "npm": "5.0.3"
   },
   "scripts": {
-    "client": "cd client && npm start",
     "start": "nodemon App.js",
-    "dev": "concurrently --kill-others \"npm start\" \"npm run client\"",
+    "client": "cd client && npm start",
+    "server": "nodemon App.js",
+    "dev": "concurrently --kill-others \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "",
