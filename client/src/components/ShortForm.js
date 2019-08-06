@@ -1,4 +1,5 @@
 import React,{useState,useRef} from 'react';
+import Button from "@material-ui/core/Button";
 import '../Styles/ShortURLForm.css';
 
 const ShortForm= (props) => {
@@ -13,16 +14,15 @@ const ShortForm= (props) => {
     setRefValue(refRef.current.value);
   };
   return (
-    <React.Fragment>
+    <div className="formContainer">
       <form method="post" action="/api/create">
         <input type="url" id="originalURLValue" value={originalURLValue} name="originalLink" ref={urlRef} placeholder="Paste Your Original URL" onChange={e=>handleChange(e)} required/>
-        <input type="text" id="refValue" value={refValue} name="identity" ref={refRef} placeholder="Give Your URL A Name *Optional" onChange={e=>referenceChange(e)}/>
-        <br/>
-        <button type="submit" id="submit">
+        <input type="text" id="refValue" maxLength="10" value={refValue} name="identity" ref={refRef} placeholder="URL Name" onChange={e=>referenceChange(e)}/>
+        <Button type="submit" variant="contained" color="primary" id="submit">
           Create URL
-        </button>
+        </Button>
       </form>
-    </React.Fragment>
+    </div>
   )
 }
 

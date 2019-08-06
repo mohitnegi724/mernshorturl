@@ -1,3 +1,18 @@
 th{
     text-align: left
 }
+
+td{
+    overflow: hidden;
+    max-width: 100px;
+    height: 30px;
+    line-height: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: blue;
+}
+.copyLink, .openLink{
+    text-align: center
+}

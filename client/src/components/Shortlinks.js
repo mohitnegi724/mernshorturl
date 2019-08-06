@@ -14,25 +14,36 @@ class Shortlinks extends Component {
             <ShortLink url={url}/>
           </React.Fragment>
         );
-      });    };
-    return (
-      <div>
-        <p>Shortlinks</p>
-        {Links.length>0?<table>
+      });    
+    };
+    const checkLinks=()=>{
+      if(Links.length>0){
+        return(
+          <table>
           <thead>
             <tr>
               <th>Original Link</th>
               <th>Short Id</th>
-              <th>identity</th> 
-              <th>Creation Date</th>
-              <th>Copy url</th>
-              <th>Open Link</th>  
+              <th>Name</th> 
+              <th>Date</th>
+              <th className="copyLink">Copy</th>
+              <th className="openLink">Open</th>  
             </tr>
           </thead>
           <tbody>
             {showLinks()}
           </tbody>
-        </table>:<p>Links Are Coming...</p>}
+        </table>
+        )
+      }else{
+        return(
+          <h3>There Is No Shortlinks! Create One.</h3>
+        )
+      }
+    }
+    return (
+      <div className="ShortlinksContainer">
+        {checkLinks()}
       </div>
     )
   }
