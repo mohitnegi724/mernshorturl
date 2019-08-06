@@ -12,8 +12,8 @@ export const fetchLinks = () => async dispatch => {
 };
 
 export const fetchLink = (shortid) => async dispatch => {
-    const Link = axios.get(`/`);
-    await Link.then(URLS=>{
+    const Link = await axios.get(`/`);
+    Link.then(URLS=>{
         return dispatch({type:FETCH_LINK, Link:URLS.data});
     })
     .catch(err=>{

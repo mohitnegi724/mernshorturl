@@ -2,6 +2,7 @@ var express = require("express");
 const app = express();
 const cors = require("cors");
 const Keys = require("./config/keys");
+const path = require("path");
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 app.use(cors());
@@ -11,10 +12,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 require("./Routes/Links")(app);
-mongoose.connect(Keys.mongoURI, { useNewUrlParser: true }, ()=>{
+const PORT = process.env.PORT || 5000;
+mongoose.connect(process.env.MONGO_URI || Keys.mongoURI, { useNewUrlParser: true }, ()=>{
     console.log("DB Connected");
 });
-const PORT = process.env.PORT || 5000;
 if (process.env.NODE_ENV === "production") {
     app.use(express.static('client/build'));
 

@@ -20,7 +20,7 @@ const ShortLink =(props) => {
             <td>{slicedOriginalLink}</td>
             <td id={shortlinkid}><a href={shortLinkURL} target="_blank" rel="noopener noreferrer">{shortlinkid}</a></td>
             <td>{identity}</td>
-            <td>{new Date(Number(createdDate)).toLocaleDateString()} {new Date(Number(createdDate)).toLocaleTimeString()}</td>
+            <td>{new Date(Number(createdDate)).toLocaleDateString()} || {new Date(Number(createdDate)).toLocaleTimeString()}</td>
             <td className="copyLink" onClick={()=>getCopied()}><img src={copyLinkIcon} alt="Copy Link Icon" className="copyLinkIcon"/></td>
             <td className="openLink"><a href={shortLinkURL} target="_blank" rel="noopener noreferrer"><img src={openLinkIcon} alt="Open Link Icon" className="openLinkIcon"/></a></td>
         </tr>

@@ -16,8 +16,9 @@ class Shortlinks extends Component {
         );
       });    
     };
+
     const checkLinks=()=>{
-      if(Links.length>0){
+      if(Links && Links.length>=0 && Links[0] !==undefined){
         return(
           <table>
           <thead>
@@ -35,12 +36,20 @@ class Shortlinks extends Component {
           </tbody>
         </table>
         )
-      }else{
-        return(
-          <h3>There Is No Shortlinks! Create One.</h3>
-        )
+      }
+      else if(Links.length===0 && Links[0] ===undefined){
+        if(Links[0] ===undefined){
+          return(
+            <h3>Links Are Coming..</h3>
+          )
+        }else{
+          return(
+            <h3>There Is No Shortlinks! Create One....</h3>
+          )
+        }
       }
     }
+    
     return (
       <div className="ShortlinksContainer">
         {checkLinks()}
