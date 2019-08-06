@@ -2,9 +2,9 @@ var express = require("express");
 const app = express();
 const cors = require("cors");
 const Keys = require("./config/keys");
-const path = require("path");
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+const path = require("path");
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGO_URI || Keys.mongoURI, { useNewUrlParser: true
     console.log("DB Connected");
 });
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "client", "build")));
+    app.use(express.static('client/bui'));
     app.get("*", (req, res) => {
         res.sendFile(path.join(__dirname, "client", "build", "index.html"));
     });
