@@ -1,7 +1,7 @@
 var express = require("express");
 const app = express();
-const cors = require("cors");
 const Keys = require("./config/keys");
+const cors = require("cors");
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 const path = require("path");
@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGO_URI || Keys.mongoURI, { useNewUrlParser: true
     console.log("DB Connected");
 });
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static('client/bui'));
+    app.use(express.static('client/build'));
     app.get("*", (req, res) => {
         res.sendFile(path.join(__dirname, "client", "build", "index.html"));
     });
