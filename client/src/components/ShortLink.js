@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{memo} from 'react';
 import copy from 'clipboard-copy';
 import "../Styles/Shortlink.css";
 
@@ -14,6 +14,7 @@ const ShortLink =(props) => {
     copy(window.location.href + shortlinkid);
     alert("Link Copied!");
   };
+  console.log("Short Link");
   return (
     <React.Fragment>
         <tr className="Row">
@@ -28,4 +29,4 @@ const ShortLink =(props) => {
   )
 }
 
-export default ShortLink;
+export default memo(ShortLink);

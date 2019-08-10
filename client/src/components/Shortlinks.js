@@ -6,6 +6,8 @@ import "../Styles/Shortlinks.css";
 
 class Shortlinks extends Component {
   render() {
+  console.log("Short Links");
+
     const {Links} = this.props;
     const showLinks = () => {
       return Links.map(url=>{

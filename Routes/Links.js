@@ -26,9 +26,21 @@ module.exports=app=>{
         .catch(err=>res.send(err));
     });
 
-    app.get("/api/:shortid", async (req, res)=>{
-        const shortid = await req.params.shortid;
-        const shorturlobject = await Links.findOne({shortlinkid:shortid});
-        res.json(shorturlobject.originalLink);
+    app.get("/api/:shortid", (req, res)=>{
+        const shortid = req.params.shortid;
+        Links.findOne({
+            shortlinkid: shortid
+        }).then(shorturlobject => res.json(shorturlobject.originalLink)).catch(err => {
+            res.send("err")
+        })
     });
+
+// if (!shorturlobject) {
+//     console.log(err);
+//     res.status(404);
+// } else if (shorturlobject) {
+//     console.log(shorturlobject);
+//     res.json(shorturlobject.originalLink);
+// }
+
 };

@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component,Fragment } from 'react';
 import axios from 'axios';
+import FileNotFound from './FileNotFound';
 import '../Styles/Redirect.css';
 
 class Redirect extends Component {
@@ -8,20 +9,29 @@ class Redirect extends Component {
     this.state = {
       redirectLink: null
     };
-    axios.get("/api/" + this.props.match.params.shortId).then(res => this.setState({
-      redirectLink: res.data
-    }));
+    axios.get("/api/" + this.props.match.params.shortId).then(res =>{
+      this.setState({
+        redirectLink: res.data
+      });
+    });
   }
   
   render() {
     const redirectURL = this.state.redirectLink;
     const redirectFunc=()=>{
-      window.location=redirectURL;
-    }
+      console.log("Rendering");
+      if (redirectURL==="err"){
+        return(
+          <FileNotFound/>
+        )
+      }else{
+        window.location = redirectURL;
+      }
+    };
     return (
-      <div>
+      <Fragment>
         {this.state.redirectLink?redirectFunc():null}
-      </div>
+      </Fragment>
     )
   }
 }
