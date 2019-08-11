@@ -2,16 +2,15 @@
   "name": "shorturl",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "App.js",
   "engines": {
     "node": "10.3.0",
     "npm": "5.0.3"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon App.js",
     "client": "cd client && npm start",
-    "server": "nodemon server.js",
-    "dev": "concurrently --kill-others \"npm start\" \"npm run client\"",
+    "dev": "concurrently --kill-others \"npm run start\" \"npm run client\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "",
@@ -28,8 +27,6 @@
     "node": "^12.7.0",
     "nodemon": "^1.19.1",
     "path": "^0.12.7",
-    "react-router": "^5.0.1",
-    "react-router-dom": "^5.0.1",
     "shortid": "^2.2.14"
   }
 }
