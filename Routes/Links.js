@@ -5,7 +5,7 @@ const Links = require("../models/Links.model");
 
 module.exports=app=>{
     app.get("/api/links",async (req,res)=>{
-        const FoundLinks = await Links.find().sort({"createdDate":-1});
+        const FoundLinks = await Links.find({}).sort({"createdDate":-1});
         res.send(FoundLinks);
     });
 
@@ -30,13 +30,4 @@ module.exports=app=>{
             res.send("err")
         })
     });
-
-// if (!shorturlobject) {
-//     console.log(err);
-//     res.status(404);
-// } else if (shorturlobject) {
-//     console.log(shorturlobject);
-//     res.json(shorturlobject.originalLink);
-// }
-
 };
