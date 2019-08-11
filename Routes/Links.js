@@ -4,10 +4,6 @@ const Links = require("../models/Links.model");
 
 
 module.exports=app=>{
-    app.get("/",async (req,res)=>{
-        const FoundLinks = await Links.find().sort({"createdDate":-1});
-        res.send(FoundLinks);
-    });
     app.get("/api/links",async (req,res)=>{
         const FoundLinks = await Links.find().sort({"createdDate":-1});
         res.send(FoundLinks);
