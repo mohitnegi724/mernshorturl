@@ -58,3 +58,29 @@ th,td {
   ::-webkit-scrollbar-thumb {
     background: #039be5; 
   }
+
+  @media screen and (max-width: 500px) {
+    tr{
+        height: 30px !important;
+        overflow: hidden;
+    }
+    th{
+        font-size: 12px;
+        text-transform: uppercase;
+        line-height: 30px;
+        height: 30px;
+        padding-bottom: 5px;
+    }
+    .ShortlinksContainer{
+        margin-top: 0px;
+    }
+    .ShortId{
+        display: none;
+    }
+    th, td{
+        text-align: center
+    }
+    .Date{
+        display: none
+    }
+}

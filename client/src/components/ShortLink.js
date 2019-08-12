@@ -14,14 +14,13 @@ const ShortLink =(props) => {
     copy(shortLinkURL);
     alert("Link Copied!");
   };
-  console.log("Short Link");
   return (
     <React.Fragment>
         <tr className="Row">
             <td>{slicedOriginalLink}</td>
-            <td id={shortlinkid}><a href={shortLinkURL} target="_blank" rel="noopener noreferrer">{shortlinkid}</a></td>
-            <td>{identity}</td>
-            <td>{new Date(Number(createdDate)).toLocaleDateString()} || {new Date(Number(createdDate)).toLocaleTimeString()}</td>
+            <td className="ShortId" id={shortlinkid}><a href={shortLinkURL} target="_blank" rel="noopener noreferrer">{shortlinkid}</a></td>
+            <td className="identity">{identity}</td>
+            <td className="Date">{new Date(Number(createdDate)).toLocaleDateString()} || {new Date(Number(createdDate)).toLocaleTimeString()}</td>
             <td className="copyLink" onClick={()=>getCopied()}><img src={copyLinkIcon} alt="Copy Link Icon" className="copyLinkIcon"/></td>
             <td className="openLink"><a href={shortLinkURL} target="_blank" rel="noopener noreferrer"><img src={openLinkIcon} alt="Open Link Icon" className="openLinkIcon"/></a></td>
         </tr>

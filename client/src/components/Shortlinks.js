@@ -24,9 +24,9 @@ class Shortlinks extends Component {
           <thead>
             <tr>
               <th>Original Link</th>
-              <th>Short Id</th>
+              <th className="ShortId">Short Id</th>
               <th>Name</th> 
-              <th>Date</th>
+              <th className="Date">Date</th>
               <th className="copyLink">Copy</th>
               <th className="openLink">Open</th>  
             </tr>
