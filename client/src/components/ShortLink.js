@@ -11,7 +11,7 @@ const ShortLink =(props) => {
   const shortLinkURL = "http://tinylinks.herokuapp.com/"+shortlinkid;
   const slicedOriginalLink = originalLink.slice(0,20) + "....";
   const getCopied=()=>{
-    copy(window.location.href + shortlinkid);
+    copy(shortLinkURL);
     alert("Link Copied!");
   };
   console.log("Short Link");
