@@ -5,7 +5,6 @@ const DEFAULT_STATE={
 const RootReducer=(state=DEFAULT_STATE, action)=>{
     switch(action.type){
         case FETCH_LINKS:
-        console.log(action.Links);
         return {
             Links:action.Links
         };

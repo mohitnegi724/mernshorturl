@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import '../Styles/NotFound.css';
 
 const  NotFound=() => {
-  console.log("File Not Found");
   return (
     <React.Fragment >
       <div className="notFoundCont">

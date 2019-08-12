@@ -19,7 +19,6 @@ class Redirect extends Component {
   render() {
     const redirectURL = this.state.redirectLink;
     const redirectFunc=()=>{
-      console.log("Rendering");
       if (redirectURL==="err"){
         return(
           <FileNotFound/>
