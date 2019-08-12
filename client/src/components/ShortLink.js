@@ -8,12 +8,13 @@ const ShortLink =(props) => {
   const copyLinkIcon = "https://res.cloudinary.com/mohitnegi724/image/upload/v1565060487/Icons/copy_wxlgv9.svg";
 
   const {originalLink, identity, shortlinkid, createdDate} = props.url;
-  const shortLinkURL = document.domain +"/"+ shortlinkid;
+  const shortLinkURL = window.location.href+shortlinkid;
   const slicedOriginalLink = originalLink.slice(0,20) + "....";
   const getCopied=()=>{
-    copy(document.doamin + shortlinkid);
-    alert("Link Copied!" +  document.domain +"/"+ shortlinkid);
+    copy(window.location.href + shortlinkid);
+    alert("Link Copied!");
   };
+  console.log("Short Link");
   return (
     <React.Fragment>
         <tr className="Row">
